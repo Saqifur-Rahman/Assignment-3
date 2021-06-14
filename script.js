@@ -91,14 +91,29 @@ function selected(){
     console.log(colorSelected);
 }
 
+//fill all cells with selected color
 function fill(){
+
     alert("Clicked Fill All")
+
+    // check is color is selected
+    if (colorSelected == null) {
+        return alert("No color selected!")
+    }
+
+    // fill uncolored cells
+    var cells = document.getElementsByTagName('td')
+    for(var i=0; i < cells.length; i++) {
+        cells[i].style.background = colorSelected
+    }
+
 }
 
 function clearAll(){
     alert("Clicked Clear All")
 }
 
+//fill all uncolored cells
 function fillU(){
 
     alert("Clicked Fill All Uncolored")
