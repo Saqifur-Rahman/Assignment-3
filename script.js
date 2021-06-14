@@ -100,5 +100,19 @@ function clearAll(){
 }
 
 function fillU(){
+
     alert("Clicked Fill All Uncolored")
+
+    // check is color is selected
+    if (colorSelected == null) {
+        return alert("No color selected!")
+    }
+
+    // fill uncolored cells
+    var cells = document.getElementsByTagName('td')
+    for(var i=0; i < cells.length; i++) {
+        if (cells[i].style.background == '')
+            cells[i].style.background = colorSelected
+    }
+    
 }
