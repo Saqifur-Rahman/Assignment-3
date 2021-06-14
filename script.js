@@ -28,7 +28,26 @@ function addR() {
 
 //Adds a column
 function addC() {
+
     alert("Clicked Add Col")
+
+    // check if rows = 0
+    if(numRows == 0) {
+        return addR()
+    }
+    
+    // insert cells
+    // outer loop - columns
+    for (var i = numCols++; i < numCols; i++) {
+        // inner loop - rows
+        for (var j=0; j < numRows; j++) {
+            // Add Cell 
+            var newCell = grid.rows[j].insertCell(i); 
+            var newText = document.createTextNode('CELL'); 
+            newCell.appendChild(newText);
+        }
+    }
+
 }
 
 //Removes a row
