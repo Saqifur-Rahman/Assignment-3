@@ -52,8 +52,15 @@ function addC() {
 
 //Removes a row
 function removeR() {
+
     alert("Clicked Remove Row")
+
+    // delete row
+    grid.deleteRow(numRows-1)
+    numRows--
+
 }
+
 //Remove a column
 function removeC() {
     alert("Clicked Remove Col")
