@@ -4,8 +4,28 @@ let colorSelected;
 
 //Adds a row
 function addR() {
+
     alert("Clicked Add Row")
+    
+    // check if columns = 0
+    if(numCols == 0)
+        numCols++
+
+    // insert row
+    var row = grid.insertRow() 
+    grid.appendChild(row);
+
+    // insert cells
+    for (var i = 0; i < numCols; i++) {
+        // Add Cell 
+        var newCell = row.insertCell(i); 
+        var newText = document.createTextNode('CELL'); 
+        newCell.appendChild(newText);
+    }
+    numRows++;
+
 }
+
 //Adds a column
 function addC() {
     alert("Clicked Add Col")
