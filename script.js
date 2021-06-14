@@ -16,6 +16,7 @@ function addR() {
     grid.appendChild(row);
 
     // insert cells
+    // loop - columns
     for (var i = 0; i < numCols; i++) {
         // Add Cell 
         var newCell = row.insertCell(i); 
@@ -60,7 +61,7 @@ function removeR() {
         return alert("No rows to remove!")
     }
 
-    // delete row
+    // delete row and delete cells
     grid.deleteRow(numRows-1)
     numRows--
 
@@ -76,6 +77,8 @@ function removeC() {
         return alert("No comlumns to remove!")
     }
 
+    // remove columns and delete cells
+    // loop - rows
     for(var i=0; i < numRows; i++) {
         grid.rows[i].deleteCell(numCols-1)
     }
