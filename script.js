@@ -16,6 +16,7 @@ function addR() {
     grid.appendChild(row);
 
     // insert cells
+    // loop - columns
     for (var i = 0; i < numCols; i++) {
         // Add Cell 
         var newCell = row.insertCell(i); 
@@ -55,7 +56,16 @@ function removeR() {
 
     alert("Clicked Remove Row")
 
+====== remove-columns
+    // if numRows = 0
+    if(numRows == 0) {
+        return alert("No rows to remove!")
+    }
+
+    // delete row and delete cells
+=======
     // delete row
+====== main
     grid.deleteRow(numRows-1)
     numRows--
 
@@ -63,8 +73,22 @@ function removeR() {
 
 //Remove a column
 function removeC() {
+
     alert("Clicked Remove Col")
+
+    // if numRows = 0
+    if(numCols == 0) {
+        return alert("No comlumns to remove!")
+    }
+
+    // remove columns and delete cells
+    // loop - rows
+    for(var i=0; i < numRows; i++) {
+        grid.rows[i].deleteCell(numCols-1)
+    }
+    numCols--
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
