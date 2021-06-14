@@ -56,16 +56,12 @@ function removeR() {
 
     alert("Clicked Remove Row")
 
-====== remove-columns
     // if numRows = 0
     if(numRows == 0) {
         return alert("No rows to remove!")
     }
 
     // delete row and delete cells
-=======
-    // delete row
-====== main
     grid.deleteRow(numRows-1)
     numRows--
 
