@@ -139,7 +139,7 @@ function clearAll(){
 
     alert("Clicked Clear All")
 
-   // fill uncolored cells
+   // ufill color from all cells
    var cells = document.getElementsByTagName('td')
    for(var i=0; i < cells.length; i++) {
        cells[i].style.background = ''
