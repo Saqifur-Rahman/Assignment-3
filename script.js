@@ -22,7 +22,10 @@ function addR() {
         var newCell = row.insertCell(i); 
         var newText = document.createTextNode('CELL'); 
         newCell.appendChild(newText);
-    }
+        newCell.onclick = function() {
+            return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
+        }
+    }   
     numRows++;
 
 }
@@ -46,7 +49,29 @@ function addC() {
             var newCell = grid.rows[j].insertCell(i); 
             var newText = document.createTextNode('CELL'); 
             newCell.appendChild(newText);
+            newCell.onclick = function() {
+                return changeColor(this.parentElement.rowIndex, this.cellIndex+1)
+            }
         }
+    }
+
+}
+
+function changeColor(rowIndex, cellIndex) {
+
+    // cell to be colored
+    target = rowIndex*numCols + cellIndex
+
+    // check is color is selected
+    if (colorSelected == null) {
+        return alert("No color selected!")
+    }
+
+    // color the cell
+    var cells = document.getElementsByTagName('td')
+    for(var i=0; i <= cells.length; i++) {
+        if (target-1 == i)
+            cells[i].style.background = colorSelected
     }
 
 }
