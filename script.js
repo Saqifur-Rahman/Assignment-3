@@ -139,17 +139,11 @@ function clearAll(){
 
     alert("Clicked Clear All")
 
-    // check if rows and columns exist
-    if(numRows == 0 && numCols == 0) {
-        return alert("No rows and columns to delete!")
-    }
-
-    // delete all rows and columns
-    while(numRows) {
-        grid.deleteRow(numRows-1)
-        numRows--
-    }
-    numCols = 0
+   // fill uncolored cells
+   var cells = document.getElementsByTagName('td')
+   for(var i=0; i < cells.length; i++) {
+       cells[i].style.background = ''
+   }
 
 }
 
